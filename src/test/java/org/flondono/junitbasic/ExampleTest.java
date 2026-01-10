@@ -80,6 +80,126 @@ class ExampleTest {
     }
 
     @Test
+    void testContieneElemento() {
+        // Given
+        List<String> dogs = List.of("Polo", "Juanita", "Salem", "Juancho");
+        String dog = "Juancho";
+
+        // When
+        boolean result = this.exampleTest.contieneElemento(dogs, dog);
+
+        // Then
+        assertTrue(result);
+    }
+
+    @Test
+    void testRevertirCadena() {
+        //Given
+        String cadena = "juancho";
+
+        //When
+        String result = this.exampleTest.revertirCadena(cadena);
+
+        //Then
+        assertEquals("ohcnauj", result);
+    }
+
+    @Test
+    void testFactorial() {
+        //Given
+        int numero = 5;
+
+        //When
+        Long result = this.exampleTest.factorial(numero);
+
+        //Then
+        assertEquals(120, result);
+    }
+
+    @Test
+    void testFactorialNegativo() {
+        //Given
+        int numero = -6;
+
+        //When - Then
+        assertThrows(IllegalArgumentException.class, () -> {
+            this.exampleTest.factorial(numero);
+        });
+    }
+
+    @Test
+    void testEsPrimo() {
+        int number = 3;
+        boolean result = this.exampleTest.esPrimo(number);
+        assertTrue(result);
+    }
+
+    @Test
+    void testEsPrimoMenorQueUno() {
+        int number = 0;
+        boolean result = this.exampleTest.esPrimo(number);
+        assertFalse(result);
+    }
+
+    @Test
+    void testEsPrimoMayorQueTres() {
+        int number = 7;
+        boolean result = this.exampleTest.esPrimo(number);
+        assertTrue(result);
+    }
+
+    @Test
+    void testNoesPrimo() {
+        int number =9;
+        boolean result = this.exampleTest.esPrimo(number);
+        assertFalse(result);
+    }
+
+    @Test
+    void testMensajeConRetraso() throws InterruptedException {
+        // When
+        String result = this.exampleTest.mensajeConRetraso();
+
+        // Then
+        assertEquals("Listo después de retraso", result);
+    }
+
+    @Test
+    void testConvertirAString() {
+        List<Integer> numbers = List.of(1, 2, 3);
+        List<String> result = List.of("1", "2", "3");
+        assertEquals(result, this.exampleTest.convertirAString(numbers));
+    }
+
+    @Test
+    void testCalcularMedia() {
+        //Given
+        List<Integer> numbers = List.of(1, 2, 3);
+        //When
+        double result = this.exampleTest.calcularMedia(numbers);
+        //Then
+        assertEquals(2, result);
+    }
+
+    @Test
+    void testCalcularMediaNull() {
+        List<Integer> numbers = null;
+
+        //When - Then
+        assertThrows(IllegalArgumentException.class, () -> {
+            this.exampleTest.calcularMedia(numbers);
+        });
+    }
+
+    @Test
+    void testCalcularMediaVacia() {
+        List<Integer> numbers = new ArrayList<>();
+        assertThrows(IllegalArgumentException.class, () -> {
+            this.exampleTest.calcularMedia(numbers);
+        });
+    }
+
+    @Test
     void testConvertirListaAString() {
         //Given
         List<String> lista = new ArrayList<>();
