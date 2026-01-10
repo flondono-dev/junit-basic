@@ -38,12 +38,12 @@ jobs:
           pwd
 
       # Configure Java Version 17
-      # - name: Set up Java 17
-      #   uses: actions/setup-java@5.1.0
-      #   with:
-      #     distribution: temurin
-      #     java-version: 17
-      #     cache: maven
+      - name: Set Java JDK
+        uses: actions/setup-java@4.8.0
+        with:
+          distribution: 'corretto'
+          java-version: '17'
+          cache: "maven"
 
       # # Build with Maven
       # - name: Build with Maven
