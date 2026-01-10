@@ -28,6 +28,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: '0'
+      
+      - name: Listar carpetas
+        run: |
+          echo "Listando repositorios"
+          ls -la
+
+          echo "Mostrando carpeta actual"
+          pwd
 
       # Configure Java Version 17
       # - name: Set up Java 17
