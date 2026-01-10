@@ -36,7 +36,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo "$MY_VARIABLE_DEV"
+          echo "MY_VARIABLE"
 
 
       - name: Official SonarQube Scan
