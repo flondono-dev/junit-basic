@@ -43,7 +43,7 @@ jobs:
           SONAR_TOKEN: ${{secrets.TOKEN_GITHUB}}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: >
-            -Dsonar.projectName=flondono-dev_junit-basic
+          args: > 
+            -Dsonar.projectName=${{ secrets.SONAR_KEY }}-${{ github.workspace }}
             -Dsonar.projectKey=${{ secrets.SONAR_KEY }}
             -Dsonar.organization=${{ secrets.ORGANIZATION_SONAR_CLOUD }}
