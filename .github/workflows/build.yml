@@ -46,6 +46,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: > 
-            -Dsonar.projectName=${{ secrets.SONAR_KEY }}-${{ github.workspace }}
+            -Dsonar.projectName=${{ secrets.SONAR_KEY }}_${{ github.workspace }}
             -Dsonar.projectKey=${{ secrets.SONAR_KEY }}
             -Dsonar.organization=${{ secrets.ORGANIZATION_SONAR_CLOUD }}
