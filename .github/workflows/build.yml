@@ -70,4 +70,4 @@ jobs:
           args: > 
             -Dsonar.projectName=${{ secrets.SONAR_KEY }}_${{ github.workspace }}
             -Dsonar.projectKey=${{ secrets.SONAR_KEY }}
-            -Dsonar.organization=${{ secrets.ORGANIZATION_SONAR_CLOUD }}
+            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
