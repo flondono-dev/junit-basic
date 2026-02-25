@@ -49,6 +49,15 @@ jobs:
       - name: Build with Maven
         run: mvn -B clean verify
 
+
+      - name: SonarCloud Analysis with Maven Plugin 
+        run: mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \ 
+          -Dsonar.projectKey=${{ secrets.SONAR_KEY }} \ 
+          -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} \ 
+          -Dsonar.projectName="JUnit Basic" \ 
+          -Dsonar.host.url=https://sonarcloud.io \ 
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
       # # Runs a single command using the runners shell
       # - name: Run a one-line script
       #   run: echo Hello, world!
@@ -62,13 +71,13 @@ jobs:
       #     echo "Repository: ${{ github.repository }}"
 
 
-      - name: Official SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v6.0.0
-        env:
-           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
-            -Dsonar.projectKey=${{ secrets.SONAR_KEY }}
-            -Dsonar.java.binaries=target/classes
+     # - name: Official SonarQube Scan
+     #   uses: SonarSource/sonarqube-scan-action@v6.0.0
+     #   env:
+     #      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+     #   with:
+     #     args: >
+     #       -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
+     #       -Dsonar.projectKey=${{ secrets.SONAR_KEY }}
+     #       -Dsonar.java.binaries=target/classes
        
