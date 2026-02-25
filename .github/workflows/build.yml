@@ -51,7 +51,8 @@ jobs:
 
 
       - name: SonarCloud Analysis with Maven Plugin 
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \ 
+        run: | 
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \ 
           -Dsonar.projectKey=${{ secrets.SONAR_KEY }} \ 
           -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} \ 
           -Dsonar.projectName="JUnit Basic" \ 
